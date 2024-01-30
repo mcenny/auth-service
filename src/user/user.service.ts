@@ -13,7 +13,7 @@ export class UserService {
         email: dto.email,
       },
     });
-    if (user) throw new ConflictException('User already exists');
+    if (user) throw new ConflictException('User already exists, try login');
     const newUser = await this.prisma.user.create({
       data: {
         ...dto,
